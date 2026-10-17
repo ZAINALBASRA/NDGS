@@ -96,7 +96,12 @@ input::placeholder{color:var(--ph);opacity:1}
 .wv{position:absolute;left:0;top:-10px;width:200%;height:12px;color:var(--liq);animation:drift 7s linear infinite}
 .vt{position:absolute;right:0;width:10px;height:2px;border-radius:1px;background:var(--vline)}
 .lv{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:text}
-.lv input{width:80%;min-width:0;border:0;background:transparent;color:var(--ink);font-family:var(--disp);font-size:32px;font-weight:600;text-align:center;padding:0;caret-color:var(--acc)}
+.num{display:flex;align-items:baseline;justify-content:center;max-width:92%;font-family:var(--disp);font-size:32px;font-weight:600;line-height:1.15;color:var(--ink)}
+.nm{display:inline-grid;min-width:2px;max-width:100%}
+.nm::after{content:attr(data-v);grid-area:1/1;visibility:hidden;white-space:pre;font:inherit;pointer-events:none}
+.nm input{grid-area:1/1;width:0;min-width:100%;border:0;background:transparent;color:var(--ink);font:inherit;text-align:center;padding:0;caret-color:var(--acc)}
+.pc{margin-left:.08em;font-size:.72em;font-weight:600}
+.vs.em .pc{margin-left:0;font-size:1em;color:var(--ph)}
 .lv input:focus{outline:0}
 .lv .cp{color:var(--ink)}
 /* rows, produced water, notes */
@@ -112,6 +117,7 @@ input::placeholder{color:var(--ph);opacity:1}
 .nb .n{font-family:var(--disp);font-size:36px;font-weight:600;line-height:1}
 .nb .cp{color:inherit;font-weight:700;letter-spacing:.08em}
 .card.eng{grid-column:4/span 6}
+.by{grid-column:1/-1;margin:6px 0 0;padding-left:.24em;text-align:center;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.24em;line-height:1.2;color:var(--mut)}
 .ef{flex-direction:row;align-items:center;justify-content:center;gap:12px;padding:10px 16px;border-radius:18px}
 .av{display:flex;align-items:center;justify-content:center;flex:none;width:38px;height:38px;border-radius:50%;background:var(--acc);color:var(--on-acc);font-size:13px;font-weight:700;letter-spacing:.04em}
 .ef input{width:100%;min-width:0;border:0;background:transparent;color:var(--ink);font-family:var(--sans);font-size:19px;font-weight:700;text-align:center;padding:2px 0;cursor:not-allowed}
@@ -163,7 +169,7 @@ body.exp *{animation:none!important;transition:none!important}
 .ttl{font-size:16px;letter-spacing:.06em}
 .st{font-size:12px;padding:0 8px}.st.sm{font-size:10.5px;padding:0 4px;gap:4px;letter-spacing:0}.st.sm .gl{width:9px;height:9px}
 .st.big{font-size:20px}.cols5 .st.big{font-size:17px}.cols4:not(.pumps) .st.big{font-size:18px}.st.big .gl{right:8px;top:8px}
-.vs{height:140px}.lv input{font-size:24px}
+.vs{height:140px}.num{font-size:24px}
 .rows{grid-template-columns:minmax(0,1fr) auto}.rl{grid-column:1/-1}
 .pw{grid-template-columns:minmax(0,1fr)}.ar{flex-direction:row;justify-content:center}.ar svg{transform:rotate(90deg)}
 .nb .n{font-size:26px}.nb .cp{font-size:10px;letter-spacing:.03em}
@@ -206,7 +212,7 @@ var HW2='<svg class="hw b" viewBox="0 0 1200 40" preserveAspectRatio="none" fill
 function st(k,n,a,cl){return '<button type="button" class="st'+(cl?' '+cl:'')+'" data-s="1" data-st="'+k+'" data-n="'+(a||n)+'"><i class="gl"><b></b></i><span>'+n+'</span></button>'}
 function sv(k,ik,v,u){return '<div class="st v" data-s="1" data-st="'+k+'" data-n="'+ik+'"><i class="gl"><b></b></i><input class="en" data-k="'+ik+'" value="'+(v||"")+'" '+(u||"")+'></div>'}
 function fld(cap,k,ph,cl){return '<label class="fld'+(cl?' '+cl:'')+'"><span class="cp">'+cap+'</span><input inputmode="decimal" data-k="'+k+'" placeholder="'+(ph||"—")+'"></label>'}
-function vessel(ik){return '<div class="vs em"><div class="lq">'+WV+'</div><i class="vt" style="bottom:25%"></i><i class="vt" style="bottom:50%"></i><i class="vt" style="bottom:75%"></i><label class="lv"><input inputmode="decimal" data-k="'+ik+'" placeholder="%"><span class="cp">Level</span></label></div>'}
+function vessel(ik){return '<div class="vs em"><div class="lq">'+WV+'</div><i class="vt" style="bottom:25%"></i><i class="vt" style="bottom:50%"></i><i class="vt" style="bottom:75%"></i><label class="lv"><span class="num"><span class="nm" data-v=""><input inputmode="decimal" data-k="'+ik+'" aria-label="Level %" autocomplete="off"></span><b class="pc">%</b></span><span class="cp">Level</span></label></div>'}
 function card(i,label,body,o){o=o||{};return '<section class="card'+(o.c?' '+o.c:'')+'"'+(o.bd?' data-bd':'')+'><div class="ch'+(o.mid?' mid':'')+'"><span class="ci">'+ICO[i]+'</span><span class="cl">'+label+'</span>'+(o.bd?'<span class="bd" title="Running / total">0/0</span>':'')+'</div>'+body+'</section>'}
 function row(i,label,tile,unit){return '<div class="rl"><span class="ci">'+ICO[i]+'</span><span>'+label+'</span></div>'+tile+'<span class="un">'+unit+'</span>'}
 var L=["A","B","C","D"],h="";
@@ -228,12 +234,13 @@ h+='<section class="card half"><div class="rows">'+row("mod","MOD",sv("mods","mo
 h+=card("drum","PRODUCED WATER",'<div class="pw"><label class="fld xl"><span class="cp">BBL</span><input class="en" inputmode="decimal" id="bbl" data-k="bbl" placeholder="—"></label><div class="ar">'+ICO.arrow+'</div><label class="fld xl lk">'+ICO.lock+'<span class="cp">m³</span><input id="m3" readonly tabindex="-1" aria-readonly="true" placeholder="—"></label></div>',{c:"half"});
 h+=card("notes","NOTES",'<div class="ns">'+[["0","RUNNING / DUTY"],["1","STANDBY"],["2","OUT OF SERVICE"]].map(function(a){return '<div class="nb s'+a[0]+'"><div class="nt"><i class="gl s'+a[0]+'"><b></b></i><span class="n" id="c'+a[0]+'">0</span></div><span class="cp">'+a[1]+'</span></div>'}).join("")+'</div>');
 h+=card("user","SHIFT ENGINEER",'<div class="ef fld lk"><span class="av" id="av"></span><input id="eng" data-k="eng" readonly tabindex="-1" aria-readonly="true">'+ICO.lock+'</div>',{c:"eng",mid:1});
+h+='<p class="by">BY HUSSEIN ALI JABBAR</p>';
 var sh=$("sheet");sh.innerHTML=h;[].forEach.call(sh.querySelectorAll(".card"),function(c,i){c.style.setProperty("--j",i)});
 </script>
 <script>
 function queue(){clearTimeout(tm);tm=setTimeout(function(){try{localStorage.setItem(KEY,JSON.stringify(collect()));toast("تم الحفظ تلقائيًا")}catch(x){}},700)}
 var shSel=document.querySelector('select[data-k="shift"]');
-var ENG={A:"ABDULLAH TALAL",B:"HAIDER TALIB",C:"HUSSEIN ALI",D:"MOHAMMED AHMED"};
+var ENG={A:"Adbulla Talal",B:"Haider Talib",C:"Hussein Ali",D:"Mohammed Ahmed"};
 function ini(n){return n.split(/\s+/).map(function(w){return w.charAt(0)}).join("").slice(0,2).toUpperCase()}
 function shiftUI(){var v=shSel.value;$("eng").value=ENG[v]||"";$("av").textContent=ini(ENG[v]||"");$("shl").textContent="SHIFT - "+v+" -";[].forEach.call($("shm").children,function(b){b.setAttribute("aria-selected",b.dataset.v==v)})}
 function shOpen(o){$("shm").hidden=!o;$("shb").setAttribute("aria-expanded",o)}
@@ -252,7 +259,7 @@ c.forEach(function(v,i){$("c"+i).textContent=v});
 [].forEach.call(document.querySelectorAll("[data-bd]"),function(cd){var all=cd.querySelectorAll("[data-st]"),run=0;[].forEach.call(all,function(b){if(b.dataset.s=="0")run++});cd.querySelector(".bd").textContent=run+"/"+all.length})}
 stEls.forEach(function(b){b.onclick=function(e){if(e.target.tagName=="INPUT")return;setS(b,(+b.dataset.s+1)%3)}});
 function calc(){var v=parseFloat($("bbl").value.replace(/,/g,""));$("m3").value=isNaN(v)?"":(v/6.29).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})}
-function lvl(i){var vs=i.closest(".vs"),v=parseFloat(String(i.value).replace(/,/g,"")),ok=!isNaN(v)&&v>0;vs.classList.toggle("em",!ok);vs.style.setProperty("--lv",ok?Math.min(100,v):0)}
+function lvl(i){var vs=i.closest(".vs"),nm=i.parentNode;if(nm&&nm.setAttribute)nm.setAttribute("data-v",i.value);v=parseFloat(String(i.value).replace(/,/g,"")),ok=!isNaN(v)&&v>0;vs.classList.toggle("em",!ok);vs.style.setProperty("--lv",ok?Math.min(100,v):0)}
 function lvAll(){[].forEach.call(document.querySelectorAll(".lv input"),lvl)}
 function days(){var v=$("date").value,m=v.split("-");$("dtx").textContent=m.length==3?m[1]+"/"+m[2]+"/"+m[0]:"";$("day").textContent=v?new Date(v+"T12:00:00").toLocaleDateString("en-US",{weekday:"long"}).toUpperCase():""}
 function p2(n){return String(n).padStart(2,"0")}
@@ -354,6 +361,10 @@ var blob=await new Promise(function(ok){cv.toBlob(ok,"image/jpeg",.96)});
 if(!blob)throw new Error("blob");
 return buildPdf(new Uint8Array(await blob.arrayBuffer()),cv.width,cv.height,bg,W,H)
 }finally{if(host&&host.parentNode)host.parentNode.removeChild(host);document.body.classList.remove("exp")}}
+var pend=null,lab0=$("pdft").textContent;
+function canShareFile(f){try{return /Android|iPhone|iPad/i.test(navigator.userAgent)&&!!navigator.share&&!!navigator.canShare&&navigator.canShare({files:[f]})}catch(x){return false}}
+async function shareFile(f){try{await navigator.share({files:[f],title:f.name});return "ok"}catch(x){var n=x&&x.name;return n=="AbortError"?"cancel":n=="NotAllowedError"?"retry":"fail"}}
+function dlBlob(blob,name){var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},4000)}
 function isNative(){try{return !!(window.Capacitor&&Capacitor.isNativePlatform&&Capacitor.isNativePlatform())}catch(x){return false}}
 async function saveNative(blob,name){
 var C=window.Capacitor,P=C.Plugins||{},FS=P.Filesystem||C.registerPlugin("Filesystem"),SH=P.Share||C.registerPlugin("Share");
@@ -365,7 +376,9 @@ try{await SH.share({title:name,dialogTitle:"مشاركة التقرير",files:[
 catch(x){if(!/cancel/i.test(String(x&&(x.message||x)))&&!kept)throw x}
 toast(kept?"تم حفظ التقرير في المستندات › NDGS-Reports":shared?"تمت مشاركة التقرير":"لم يُحفظ الملف. اختر تطبيقًا من قائمة المشاركة لحفظه.",3600)}
 $("pdf").onclick=async function(){
-var b=this,sp=$("pdft"),t=sp.textContent;b.disabled=true;sp.textContent="جارٍ تجهيز الملف…";
+var b=this,sp=$("pdft"),keep=false;b.disabled=true;
+if(pend){var pf=pend;pend=null;try{if(await shareFile(pf)=="fail")dlBlob(pf,pf.name)}finally{b.disabled=false;sp.textContent=lab0}return}
+sp.textContent="جارٍ تجهيز الملف…";
 try{
 var bytes=await snapshot(),sh=shSel.value;
 var name="NDGS-Daily-Report-"+$("date").value+"-Shift-"+sh+".pdf",blob=new Blob([bytes],{type:"application/pdf"}),dl=null;
@@ -374,10 +387,14 @@ else{
 try{if(window.claude&&claude.use)dl=await claude.use("downloads")}catch(x){}
 if(dl){await dl.save({filename:name,data:blob})}
 else if(window.claude){throw{code:"unavailable"}}
-else{var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},4000)}
+else{var file=null;try{file=new File([blob],name,{type:"application/pdf"})}catch(x){}
+if(file&&canShareFile(file)){var r=await shareFile(file);
+if(r=="retry"){pend=file;keep=true;toast("الملف جاهز. اضغط الزر مرة أخرى لإرساله.",4200);setTimeout(function(){if(pend===file){pend=null;sp.textContent=lab0}},20000)}
+else if(r=="fail")dlBlob(blob,name)}
+else dlBlob(blob,name)}
 }
 }catch(e){if(!(e&&e.code=="declined"))toast(e&&e.code=="unavailable"?"الحفظ غير متاح في هذا العرض. افتح الصفحة في المتصفح ثم صدّر الملف.":isNative()?"تعذر حفظ الملف. حاول مرة أخرى.":"تعذر إنشاء ملف PDF. جرّب Chrome أو Edge.",4200)}
-finally{b.disabled=false;sp.textContent=t}};
+finally{b.disabled=false;sp.textContent=keep?"اضغط للمشاركة":lab0}};
 </script>
 </body>
 </html>

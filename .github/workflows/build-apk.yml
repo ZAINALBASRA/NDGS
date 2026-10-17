@@ -1,0 +1,51 @@
+name: Build APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+
+permissions:
+  contents: write
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Install packages
+        run: npm install --no-audit --no-fund
+
+      - name: Bundle the fonts into the app
+        run: node scripts/fetch-fonts.mjs
+
+      - name: Build the APK
+        run: bash scripts/ci-build.sh
+
+      - name: Keep the APK as a build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NDGS-Report-APK
+          path: NDGS-Report.apk
+          if-no-files-found: error
+
+      - name: Publish the APK as a release
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "apk-${{ github.run_number }}" NDGS-Report.apk \
+            --title "NDGS Report APK #${{ github.run_number }}" \
+            --notes "Debug build of the NDGS Daily Report app. Download NDGS-Report.apk and open it on the phone." \
+            --latest

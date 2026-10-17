@@ -1,0 +1,12 @@
+{
+  "appId": "com.ndgs.dailyreport",
+  "appName": "NDGS Report",
+  "webDir": "www",
+  "backgroundColor": "#0c3441",
+  "plugins": {
+    "SystemBars": {
+      "insetsHandling": "css",
+      "initialViewportFitValueHint": "cover"
+    }
+  }
+}

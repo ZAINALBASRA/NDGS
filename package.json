@@ -1,5 +1,5 @@
 {
-  "name": "ndgs-apk",
+  "name": "ndgs-report-apk",
   "version": "1.0.0",
   "private": true,
   "description": "NDGS Daily Report as an Android app (Capacitor)",

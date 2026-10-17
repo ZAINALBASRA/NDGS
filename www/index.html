@@ -240,7 +240,7 @@ var sh=$("sheet");sh.innerHTML=h;[].forEach.call(sh.querySelectorAll(".card"),fu
 <script>
 function queue(){clearTimeout(tm);tm=setTimeout(function(){try{localStorage.setItem(KEY,JSON.stringify(collect()));toast("تم الحفظ تلقائيًا")}catch(x){}},700)}
 var shSel=document.querySelector('select[data-k="shift"]');
-var ENG={A:"ABDULLAH TALAL",B:"HAIDER TALIB",C:"HUSSEIN ALI",D:"MOHAMMED AHMED"};
+var ENG={A:"ABDULLAH TALAL KADHIM",B:"HAIDER TALIB ABDULAMEER",C:"HUSSEIN ALI JABBAR",D:"MOHAMMED AHMED ALI"}
 function ini(n){return n.split(/\s+/).map(function(w){return w.charAt(0)}).join("").slice(0,2).toUpperCase()}
 function shiftUI(){var v=shSel.value;$("eng").value=ENG[v]||"";$("av").textContent=ini(ENG[v]||"");$("shl").textContent="SHIFT - "+v+" -";[].forEach.call($("shm").children,function(b){b.setAttribute("aria-selected",b.dataset.v==v)})}
 function shOpen(o){$("shm").hidden=!o;$("shb").setAttribute("aria-expanded",o)}

@@ -194,14 +194,28 @@ body.exp *{animation:none!important;transition:none!important}
 .hpi svg{width:23px;height:23px}
 .hpm{flex:1;min-width:0}
 .hpt{font-size:13px;font-weight:700;letter-spacing:.18em}
-.hps{margin-top:2px;font-family:var(--ar);font-size:13px;font-weight:500;color:var(--mut)}
+.hps{margin-top:2px;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--mut)}
 .hx{display:flex;align-items:center;justify-content:center;flex:none;width:40px;height:40px;padding:0;border:0;border-radius:50%;background:var(--fld);color:var(--ink);cursor:pointer}
 .hx svg{width:20px;height:20px}.hx:focus-visible,.hb2:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .hl{list-style:none;margin:0;padding:0 14px 14px;display:grid;gap:10px;overflow-y:auto;overscroll-behavior:contain}
 .hfb{display:flex;align-items:flex-end;gap:10px;padding:0 18px 12px}
-.hfl{display:grid;flex:1 1 auto;min-width:0;gap:6px;font-family:var(--ar);font-size:12.5px;font-weight:700;color:var(--mut)}
-.hfl input{box-sizing:border-box;width:100%;min-width:0;height:44px;padding:0 14px;border:1.5px solid transparent;border-radius:14px;background:var(--fld);color:var(--ink);font-family:var(--mono);font-size:14px;outline:none;direction:ltr;text-align:left;cursor:pointer}
-.hfl input:focus-visible{border-color:var(--acc)}
+.hfl{display:grid;flex:1 1 auto;min-width:0;gap:6px;font-family:var(--sans);font-size:12.5px;font-weight:700;color:var(--mut)}
+.hfv{display:flex;align-items:center;box-sizing:border-box;width:100%;min-width:0;height:44px;padding:0 14px;border:1.5px solid transparent;border-radius:14px;background:var(--fld);color:var(--ink);font-family:var(--mono);font-size:14px;font-weight:500;text-align:left;cursor:pointer}
+.hfv.e{color:var(--mut)}
+.hfv[aria-expanded=true],.hfv:focus-visible{border-color:var(--acc);outline:none}
+.cal{flex:1 1 auto;min-height:0;overflow-y:auto;padding:0 18px 14px}
+.calh{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.calt{font-size:15px;font-weight:700;letter-spacing:.02em}
+.calg{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px 0;justify-items:center}
+.cw{padding:4px 0;font-family:var(--mono);font-size:11px;font-weight:600;color:var(--mut)}
+.cd{position:relative;width:38px;height:38px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--mut);font-family:var(--mono);font-size:14px;font-weight:500;cursor:pointer}
+.cd:hover{background:var(--fld)}
+.cd.td{box-shadow:inset 0 0 0 1.5px var(--line)}
+.cd.has{color:var(--ink);font-weight:700}
+.cd.has::after{content:"";position:absolute;left:50%;bottom:4px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--acc)}
+.cd.sel{background:var(--acc);color:var(--on-acc)}
+.cd.sel::after{background:var(--on-acc)}
+.calf{display:flex;gap:10px;margin-top:10px}
 .hfb .hb2{flex:none;height:44px}
 .hi{display:grid;grid-template-columns:84px minmax(0,1fr);gap:10px 12px;padding:12px;border-radius:20px;background:var(--fld)}
 .ht{width:84px;height:56px;border-radius:12px;object-fit:cover;background:var(--line)}
@@ -210,13 +224,13 @@ body.exp *{animation:none!important;transition:none!important}
 .hn{font-size:13px;font-weight:700;line-height:1.3;overflow-wrap:anywhere}
 .hd{font-size:11.5px;font-weight:500;line-height:1.3;color:var(--mut)}
 .ha{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px}
-.hb2{flex:1 1 auto;min-width:0;height:40px;padding:0 16px;border:1.5px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);font-family:var(--ar);font-size:14px;font-weight:700;letter-spacing:0;white-space:nowrap;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s}
+.hb2{flex:1 1 auto;min-width:0;height:40px;padding:0 16px;border:1.5px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);font-family:var(--sans);font-size:14px;font-weight:700;letter-spacing:0;white-space:nowrap;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s}
 .hb2:hover{background:var(--fld)}
 .hb2.p{border-color:var(--acc);background:var(--acc);color:var(--on-acc)}.hb2.p:hover{filter:brightness(1.08)}
 .hb2.d{color:var(--r-bg)}.hb2.c,.hb2.c:hover{border-color:var(--r-bg);background:var(--r-bg);color:var(--r-fg)}
-.he{padding:34px 22px;text-align:center;font-family:var(--ar);font-size:15px;font-weight:500;line-height:1.7;color:var(--mut)}
+.he{padding:34px 22px;text-align:center;font-family:var(--sans);font-size:15px;font-weight:500;line-height:1.7;color:var(--mut)}
 #hinfo{display:flex;align-items:center;gap:8px;min-width:0}#hinfo span+span::before{content:"·";margin-inline-end:8px}
-.hpf{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;border-top:1px solid var(--line);font-family:var(--ar);font-size:13px;font-weight:500;color:var(--mut)}
+.hpf{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;border-top:1px solid var(--line);font-family:var(--sans);font-size:13px;font-weight:500;color:var(--mut)}
 .hpf .hb2{flex:none;height:36px;padding:0 14px;font-size:13px}
 #toast{z-index:80}
 @media (min-width:700px){.hs{align-items:center}.hp{border-bottom:1px solid var(--line);border-radius:28px;max-height:min(82vh,720px);box-shadow:0 30px 80px -30px var(--shadow)}}
@@ -237,15 +251,16 @@ body.exp *{animation:none!important;transition:none!important}
 @media (max-width:559px){.ha{display:grid;grid-template-columns:1fr 1fr}.ha .hb2:last-child:nth-child(odd){grid-column:1/-1}}
 /* shared history settings */
 #sy{z-index:65;align-items:center}
+#dc{z-index:66;align-items:center}
 .sp{max-height:min(92vh,740px);border-bottom:1px solid var(--line);border-radius:28px}
 .syb{display:grid;gap:12px;padding:4px 18px 18px;overflow-y:auto;overscroll-behavior:contain}
-.sf{display:grid;gap:6px;font-family:var(--ar);font-size:13px;font-weight:700}
+.sf{display:grid;gap:6px;font-family:var(--sans);font-size:13px;font-weight:700}
 .sf[hidden]{display:none!important}
-.sf i{font-style:normal;font-weight:500;color:var(--mut);font-family:var(--ar);font-size:11px;letter-spacing:.04em;margin-inline-start:6px}
+.sf i{font-style:normal;font-weight:500;color:var(--mut);font-family:var(--sans);font-size:11px;letter-spacing:.04em;margin-inline-start:6px}
 .sf input{box-sizing:border-box;width:100%;min-width:0;height:46px;padding:0 14px;border:1.5px solid transparent;border-radius:14px;background:var(--fld);color:var(--ink);font-family:var(--mono);font-size:14px;outline:none;direction:ltr;text-align:left}
 .sf input:focus{border-color:var(--acc)}
 .sf input::placeholder{color:var(--ph)}
-.syst{min-height:22px;font-family:var(--ar);font-size:13px;font-weight:600;line-height:1.7;color:var(--mut);overflow-wrap:anywhere}
+.syst{min-height:22px;font-family:var(--sans);font-size:13px;font-weight:600;line-height:1.7;color:var(--mut);overflow-wrap:anywhere}
 .syst.ok{color:var(--g-bg)}.syst.er{color:var(--r-bg)}
 .sya{display:flex;flex-wrap:wrap;gap:8px}
 .sya .hb2{flex:1 1 140px}
@@ -268,9 +283,10 @@ body.exp *{animation:none!important;transition:none!important}
 <div class="bar"><button class="b" id="pdf" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg><span id="pdft">تصدير PDF</span></button></div>
 </div>
 <div id="toast" role="status" dir="rtl"></div>
-<div id="hist" class="hs" hidden><div class="hp" role="dialog" aria-modal="true" aria-labelledby="hpt"><div class="hph"><span class="hpi" id="hpi"></span><div class="hpm"><div class="hpt" id="hpt">HISTORY</div><div class="hps">الملفات المُصدَّرة</div></div><button type="button" class="hx" id="hsy" aria-label="ربط السجل المشترك" hidden></button><button type="button" class="hx" id="hclose" aria-label="إغلاق"></button></div><div class="hfb" id="hfb" hidden><label class="hfl"><span>بحث بتاريخ التقرير</span><input type="date" id="hfd" aria-label="بحث بتاريخ التقرير"></label><button type="button" class="hb2" id="hfx" hidden>عرض الكل</button></div><ul class="hl" id="hlist"></ul><div class="hpf"><span id="hinfo"></span><button type="button" class="hb2 d" id="hclear" hidden>مسح الكل</button></div></div></div>
-<div id="sy" class="hs" hidden><div class="hp sp" role="dialog" aria-modal="true" aria-labelledby="syt"><div class="hph"><span class="hpi" id="syi"></span><div class="hpm"><div class="hpt" id="syt">SHARED HISTORY</div><div class="hps">ربط السجل المشترك</div></div><button type="button" class="hx" id="syx" aria-label="إغلاق"></button></div><div class="syb"><label class="sf" id="sfu"><span>رابط المشروع<i>Project URL</i></span><input id="syu" type="url" placeholder="https://xxxx.supabase.co" autocomplete="off" autocapitalize="none" spellcheck="false"></label><label class="sf" id="sfk"><span>المفتاح العام<i>Publishable key</i></span><input id="syk" placeholder="sb_publishable_..." autocomplete="off" autocapitalize="none" spellcheck="false"></label><label class="sf"><span>رمز المدير<i>اختياري، للحذف فقط</i></span><input id="sya" autocomplete="off" autocapitalize="none" spellcheck="false"></label><div class="syst" id="syst" role="status"></div><div class="sya"><button type="button" class="hb2 p" id="sysv">حفظ واختبار</button><button type="button" class="hb2 d" id="sydc" hidden>فصل الربط</button></div></div></div></div>
-<div id="pv" class="pv" hidden role="dialog" aria-modal="true" aria-label="عرض الملف"><div class="pvh"><button type="button" class="hx" id="pvx" aria-label="إغلاق"></button><div class="pvn" id="pvn"></div></div><div class="pvs" id="pvs"><img id="pvi" class="pvi" alt="معاينة التقرير" draggable="false"></div><div class="pvf"><div class="pvz"><button type="button" class="hx" id="pvm" aria-label="تصغير"></button><button type="button" class="hx pvp" id="pvp" aria-label="الحجم الأصلي">100%</button><button type="button" class="hx" id="pvl" aria-label="تكبير"></button></div><button type="button" class="hb2 p" id="pvo"></button></div></div>
+<div id="hist" class="hs" hidden><div class="hp" role="dialog" aria-modal="true" aria-labelledby="hpt"><div class="hph"><span class="hpi" id="hpi"></span><div class="hpm"><div class="hpt" id="hpt">HISTORY</div><div class="hps">Exported files</div></div><button type="button" class="hx" id="hsy" aria-label="Shared history" hidden></button><button type="button" class="hx" id="hclose" aria-label="Close"></button></div><div class="hfb" id="hfb" hidden><div class="hfl"><span>Search by report date</span><button type="button" class="hfv e" id="hfd" aria-haspopup="dialog" aria-expanded="false" aria-label="Search by report date"><b id="hft">Select a day</b></button></div><button type="button" class="hb2" id="hfx" hidden>Show all</button></div><div class="cal" id="cal" hidden role="dialog" aria-label="Choose a date"><div class="calh"><button type="button" class="hx" id="calp" aria-label="Previous month"></button><div class="calt" id="calt" aria-live="polite"></div><button type="button" class="hx" id="caln" aria-label="Next month"></button></div><div class="calg" id="calg"></div><div class="calf"><button type="button" class="hb2" id="calto">Today</button><button type="button" class="hb2" id="calcl">Close</button></div></div><ul class="hl" id="hlist"></ul><div class="hpf"><span id="hinfo"></span><button type="button" class="hb2 d" id="hclear" hidden>Clear all</button></div></div></div>
+<div id="sy" class="hs" hidden><div class="hp sp" role="dialog" aria-modal="true" aria-labelledby="syt"><div class="hph"><span class="hpi" id="syi"></span><div class="hpm"><div class="hpt" id="syt">SHARED HISTORY</div><div class="hps">Link shared history</div></div><button type="button" class="hx" id="syx" aria-label="Close"></button></div><div class="syb"><label class="sf" id="sfu"><span>Project URL</span><input id="syu" type="url" placeholder="https://xxxx.supabase.co" autocomplete="off" autocapitalize="none" spellcheck="false"></label><label class="sf" id="sfk"><span>Publishable key</span><input id="syk" placeholder="sb_publishable_..." autocomplete="off" autocapitalize="none" spellcheck="false"></label><div class="syst" id="syst" role="status"></div><div class="sya"><button type="button" class="hb2 p" id="sysv">Save &amp; test</button><button type="button" class="hb2 d" id="sydc" hidden>Disconnect</button></div></div></div></div>
+<div id="dc" class="hs" hidden><div class="hp sp" role="dialog" aria-modal="true" aria-labelledby="dct"><div class="hph"><span class="hpi" id="dci"></span><div class="hpm"><div class="hpt" id="dct">DELETE CODE</div><div class="hps" id="dcs"></div></div><button type="button" class="hx" id="dcx" aria-label="Close"></button></div><div class="syb"><label class="sf"><span>Delete code</span><input id="dcc" type="password" autocomplete="new-password" autocapitalize="none" spellcheck="false"></label><div class="syst" id="dcm" role="status"></div><div class="sya"><button type="button" class="hb2 d" id="dcgo">Delete</button><button type="button" class="hb2" id="dcno">Cancel</button></div></div></div></div>
+<div id="pv" class="pv" hidden role="dialog" aria-modal="true" aria-label="File viewer"><div class="pvh"><button type="button" class="hx" id="pvx" aria-label="Close"></button><div class="pvn" id="pvn"></div></div><div class="pvs" id="pvs"><img id="pvi" class="pvi" alt="Report preview" draggable="false"></div><div class="pvf"><div class="pvz"><button type="button" class="hx" id="pvm" aria-label="Zoom out"></button><button type="button" class="hx pvp" id="pvp" aria-label="Actual size">100%</button><button type="button" class="hx" id="pvl" aria-label="Zoom in"></button></div><button type="button" class="hb2 p" id="pvo"></button></div></div>
 <script>
 var tm,tt;function toast(m,ms){var t=document.getElementById("toast");t.textContent=m;t.className="on";clearTimeout(tt);tt=setTimeout(function(){t.className=""},ms||1400)}
 function $(i){return document.getElementById(i)}
@@ -297,6 +313,9 @@ hist:ic('<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M
 x:ic('<path d="M6 6l12 12M18 6L6 18"/>'),
 plus:ic('<path d="M12 5v14M5 12h14"/>'),
 minus:ic('<path d="M5 12h14"/>'),
+trash:ic('<path d="M5 7h14M10 7V5h4v2M7 7l1 12h8l1-12M10 11v5M14 11v5"/>'),
+prev:ic('<path d="M15 6l-6 6 6 6"/>'),
+next:ic('<path d="M9 6l6 6-6 6"/>'),
 cloud:ic('<path d="M7 18h10a4 4 0 0 0 .8-7.92A6 6 0 0 0 6.3 9.3 4.5 4.5 0 0 0 7 18z"/>')};
 var WV='<svg class="wv" viewBox="0 0 200 12" preserveAspectRatio="none" fill="currentColor" aria-hidden="true"><path d="M0 6Q25 0 50 6T100 6T150 6T200 6V12H0Z"/></svg>';
 var HW1='<svg class="hw a" viewBox="0 0 1200 40" preserveAspectRatio="none" fill="currentColor" fill-opacity=".2" aria-hidden="true"><path d="M0 22Q150 4 300 22T600 22T900 22T1200 22V40H0Z"/></svg>';
@@ -513,7 +532,7 @@ function hsz(n){return n>=1048576?(n/1048576).toFixed(1)+" MB":Math.max(1,Math.r
 function hdt(ts){var d=new Date(ts);return p2(d.getMonth()+1)+"/"+p2(d.getDate())+"/"+d.getFullYear()+" · "+p2(d.getHours())+":"+p2(d.getMinutes())}
 function hday(r){if(r.date)return r.date;var d=new Date(r.ts);return d.getFullYear()+"-"+p2(d.getMonth()+1)+"-"+p2(d.getDate())}
 function hdl(v){var m=String(v).split("-");return m.length==3?m[1]+"/"+m[2]+"/"+m[0]:v}
-function hnum(n){return n==1?"ملف واحد":n==2?"ملفان":n<=10?n+" ملفات":n+" ملفًا"}
+function hnum(n){return n+(n==1?" file":" files")}
 function hel(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
 function hcan(){try{if(typeof isNative=="function"&&isNative())return true;if(window.claude)return false;return typeof canShareFile=="function"&&canShareFile(new File([""],"x.pdf",{type:"application/pdf"}))}catch(x){return false}}
 function hsave(blob,name){var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},4000)}
@@ -524,16 +543,15 @@ if(window.claude&&claude.use){try{dl=await claude.use("downloads")}catch(x){}}
 if(dl){await dl.save({filename:name,data:blob});return}
 if(window.claude)throw{code:"unavailable"};
 var f=null;try{f=new File([blob],name,{type:"application/pdf"})}catch(x){}
-if(f&&typeof canShareFile=="function"&&canShareFile(f)){var s=await shareFile(f);if(s=="ok"||s=="cancel")return;if(s=="retry"){toast("اضغط الزر مرة أخرى لإرسال الملف.",3200);return}}
+if(f&&typeof canShareFile=="function"&&canShareFile(f)){var s=await shareFile(f);if(s=="ok"||s=="cancel")return;if(s=="retry"){toast("Tap the button again to send the file.",3200);return}}
 hsave(blob,name)}
 function hsyncOn(){return typeof syncOn=="function"&&syncOn()}
-function hadm(){return typeof SYadmin=="function"&&SYadmin()}
-function hdel1(r){var go=function(){return hrun(["meta","files"],"readwrite",function(t){t.objectStore("files").delete(r.id);return t.objectStore("meta").delete(r.id)})};
-(r.sy&&hsyncOn()?cloudDel(r.id):Promise.resolve()).then(go).then(function(){hc=null;hcount();hrender()}).catch(function(x){toast(x&&x.msg||"تعذر الحذف.",3200)})}
-function hclearAll(){var go=function(){return hrun(["meta","files"],"readwrite",function(t){t.objectStore("files").clear();return t.objectStore("meta").clear()})};
-(hsyncOn()?cloudDel(null):Promise.resolve()).then(go).then(function(){hc=null;hcount();hrender()}).catch(function(x){toast(x&&x.msg||"تعذر المسح.",3200)})}
+function hdelLocal(id){return hrun(["meta","files"],"readwrite",function(t){t.objectStore("files").delete(id);return t.objectStore("meta").delete(id)})}
+function hclearLocal(){return hrun(["meta","files"],"readwrite",function(t){t.objectStore("files").clear();return t.objectStore("meta").clear()})}
+function hdel1(r){hdelLocal(r.id).then(function(){hc=null;hcount();hrender()}).catch(function(){toast("Couldn't delete.",3200)})}
+function hclearAll(){hclearLocal().then(function(){hc=null;hcount();hrender()}).catch(function(){toast("Couldn't clear.",3200)})}
 function hout(b,r){if(hbusy)return;hbusy=true;b.disabled=true;var t0=b.textContent;b.textContent="…";
-hdeliver(r).catch(function(x){if(x&&x.code=="declined")return;if(x&&x.msg){toast(x.msg,3600);return}toast(x&&x.code=="unavailable"?"الحفظ غير متاح في هذا العرض. افتح الصفحة في المتصفح.":"تعذر فتح الملف. حاول مرة أخرى.",3600)}).then(function(){hbusy=false;b.disabled=false;b.textContent=t0})}
+hdeliver(r).catch(function(x){if(x&&x.code=="declined")return;if(x&&x.msg){toast(x.msg,3600);return}toast(x&&x.code=="unavailable"?"Saving isn't available in this view. Open the page in the browser.":"Couldn't open the file. Try again.",3600)}).then(function(){hbusy=false;b.disabled=false;b.textContent=t0})}
 function hjpg(b){try{var n=Math.min(b.length,1200),s="";for(var i=0;i<n;i++)s+=String.fromCharCode(b[i]);var m=/\/DCTDecode\/Length (\d+)>>\nstream\n/.exec(s);if(!m)return null;var st=m.index+m[0].length,len=+m[1];if(st+len>b.length)return null;var j=b.subarray(st,st+len);return j[0]==255&&j[1]==216?j:null}catch(x){return null}}
 function pvz(z,cx,cy){var s=$("pvs"),q=s.getBoundingClientRect();z=Math.max(1,Math.min(5,z));if(cx==null){cx=q.left+q.width/2;cy=q.top+q.height/2}
 var ox=s.scrollLeft+cx-q.left,oy=s.scrollTop+cy-q.top,k=z/pvZ;pvZ=z;s.style.setProperty("--z",z);s.scrollLeft=ox*k-(cx-q.left);s.scrollTop=oy*k-(cy-q.top);$("pvp").textContent=Math.round(z*100)+"%"}
@@ -541,62 +559,79 @@ function pvclose(){if($("pv").hidden)return;$("pv").hidden=true;$("pvi").removeA
 async function hview(r,btn){
 var b=await hget(r.id),j=hjpg(b);
 if(!j){var u=URL.createObjectURL(new Blob([b],{type:"application/pdf"})),w=null;try{w=window.open(u,"_blank")}catch(x){}
-setTimeout(function(){URL.revokeObjectURL(u)},60000);if(!w)toast("تعذر عرض الملف هنا. استخدم زر التنزيل.",3200);return}
+setTimeout(function(){URL.revokeObjectURL(u)},60000);if(!w)toast("Can't show the file here. Use the Download button.",3200);return}
 if(pvU)URL.revokeObjectURL(pvU);pvU=URL.createObjectURL(new Blob([j],{type:"image/jpeg"}));pvR=r;pvPrev=btn||document.activeElement;
-$("pvn").textContent=r.name;$("pvo").textContent=hcan()?"مشاركة":"تنزيل";$("pvi").src=pvU;pvZ=1;$("pvs").style.setProperty("--z",1);$("pvp").textContent="100%";$("pvs").scrollTop=0;$("pvs").scrollLeft=0;$("pv").hidden=false;$("pvx").focus()}
+$("pvn").textContent=r.name;$("pvo").textContent=hcan()?"Share":"Download";$("pvi").src=pvU;pvZ=1;$("pvs").style.setProperty("--z",1);$("pvp").textContent="100%";$("pvs").scrollTop=0;$("pvs").scrollLeft=0;$("pv").hidden=false;$("pvx").focus()}
 function hrestore(r){
 var o=r.st;if(!o)return;
 fill(o);stEls.forEach(lab);count();
 try{localStorage.setItem(KEY,JSON.stringify(collect()))}catch(x){}
 hhide(true);try{window.scrollTo({top:0})}catch(x){}
-toast("تم استرجاع التقرير. عدّل ما تريد ثم صدّره.",2600)}
+toast("Report restored. Edit as needed, then export.",2600)}
 function hconf(btn,label,fn){
 if(btn.dataset.arm){clearTimeout(+btn.dataset.arm);delete btn.dataset.arm;fn();return}
 var old=btn.textContent;btn.dataset.arm=setTimeout(function(){delete btn.dataset.arm;btn.textContent=old;btn.classList.remove("c")},3000);
-btn.textContent="تأكيد؟";btn.classList.add("c")}
+btn.textContent="Confirm?";btn.classList.add("c")}
 function hrender(){
 var ul=$("hlist"),can=hcan();
 return hlist().then(function(rows){
-hrows=rows;var all=rows.length,fl=hfd?rows.filter(function(r){return hday(r)==hfd}):rows;$("hfb").hidden=!all;$("hfx").hidden=!hfd;if($("hfd").value!=hfd)$("hfd").value=hfd;
+hrows=rows;var all=rows.length,fl=hfd?rows.filter(function(r){return hday(r)==hfd}):rows;$("hfb").hidden=!all;$("hfx").hidden=!hfd;hfLabel();if(!all)hcalOpen(false);else if(!$("cal").hidden)hcalDraw();
 ul.textContent="";var tot=0;
 fl.forEach(function(r){tot+=r.size||0;
 var li=hel("li","hi");li.dataset.id=r.id;
 if(r.thumb){var im=hel("img","ht");im.alt="";im.src=r.thumb;li.appendChild(im)}else{var ph=hel("div","ht ph");ph.innerHTML=ICO.notes;li.appendChild(ph)}
-var m=hel("div","hm");m.appendChild(hel("div","hn",r.name));m.appendChild(hel("div","hd","Exported "+hdt(r.ts)+" · "+hsz(r.size||0)));if(typeof syncOn=="function"&&syncOn()){var tg=hel("div","hd hy");tg.innerHTML=ICO.cloud;tg.appendChild(document.createTextNode(r.sy?"في السجل المشترك":"على هذا الجهاز فقط، بانتظار الرفع"));m.appendChild(tg)}
+var m=hel("div","hm");m.appendChild(hel("div","hn",r.name));m.appendChild(hel("div","hd","Exported "+hdt(r.ts)+" · "+hsz(r.size||0)));if(typeof syncOn=="function"&&syncOn()){var tg=hel("div","hd hy");tg.innerHTML=ICO.cloud;tg.appendChild(document.createTextNode(r.sy?"In shared history":"On this device only, waiting to upload"));m.appendChild(tg)}
 li.appendChild(m);
-var a=hel("div","ha"),b0=hel("button","hb2 p","عرض");b0.type="button";b0.dataset.a="view";b0.setAttribute("aria-label","عرض "+r.name);a.appendChild(b0);
-var b1=hel("button","hb2",can?"مشاركة":"تنزيل");b1.type="button";b1.dataset.a="out";b1.setAttribute("aria-label",b1.textContent+" "+r.name);a.appendChild(b1);
-if(r.st){var b2=hel("button","hb2","استرجاع");b2.type="button";b2.dataset.a="res";b2.setAttribute("aria-label","استرجاع "+r.name);a.appendChild(b2)}
-if(!(hsyncOn()&&r.sy&&!hadm())){var b3=hel("button","hb2 d","حذف");b3.type="button";b3.dataset.a="del";b3.setAttribute("aria-label","حذف "+r.name);a.appendChild(b3)}
+var a=hel("div","ha"),b0=hel("button","hb2 p","View");b0.type="button";b0.dataset.a="view";b0.setAttribute("aria-label","View "+r.name);a.appendChild(b0);
+var b1=hel("button","hb2",can?"Share":"Download");b1.type="button";b1.dataset.a="out";b1.setAttribute("aria-label",b1.textContent+" "+r.name);a.appendChild(b1);
+if(r.st){var b2=hel("button","hb2","Restore");b2.type="button";b2.dataset.a="res";b2.setAttribute("aria-label","Restore "+r.name);a.appendChild(b2)}
+var b3=hel("button","hb2 d","Delete");b3.type="button";b3.dataset.a="del";b3.setAttribute("aria-label","Delete "+r.name);a.appendChild(b3);
 li.appendChild(a);ul.appendChild(li)});
-if(!all){var e=hel("li","he");e.appendChild(hel("div",null,"لا توجد ملفات مُصدَّرة بعد."));e.appendChild(hel("div",null,"كل ملف PDF تصدّره سيظهر هنا."));ul.appendChild(e)}
-else if(!fl.length){var e2=hel("li","he");e2.appendChild(hel("div",null,"لا توجد ملفات بتاريخ التقرير "));e2.firstChild.appendChild(hel("bdi",null,hdl(hfd)));e2.appendChild(hel("div",null,"اختر يومًا آخر أو اضغط عرض الكل."));ul.appendChild(e2)}
-var hi=$("hinfo");hi.textContent="";if(fl.length){var cn=hel("span",null,hfd?fl.length+" من "+all+" ملفًا":hnum(fl.length));cn.dir="rtl";hi.appendChild(cn);var sz=hel("span",null,hsz(tot));sz.dir="ltr";hi.appendChild(sz)}
-$("hclear").hidden=!all||!!hfd||(hsyncOn()&&!hadm());$("hclear").textContent="مسح الكل";$("hclear").classList.remove("c");delete $("hclear").dataset.arm;
+if(!all){var e=hel("li","he");e.appendChild(hel("div",null,"No exported files yet."));e.appendChild(hel("div",null,"Every PDF you export will appear here."));ul.appendChild(e)}
+else if(!fl.length){var e2=hel("li","he");e2.appendChild(hel("div",null,"No files for report date "+hdl(hfd)));e2.appendChild(hel("div",null,"Pick another day or tap Show all."));ul.appendChild(e2)}
+var hi=$("hinfo");hi.textContent="";if(fl.length){var cn=hel("span",null,hfd?fl.length+" of "+all+" files":hnum(fl.length));cn.dir="ltr";hi.appendChild(cn);var sz=hel("span",null,hsz(tot));sz.dir="ltr";hi.appendChild(sz)}
+$("hclear").hidden=!all||!!hfd;$("hclear").textContent="Clear all";$("hclear").classList.remove("c");delete $("hclear").dataset.arm;
 }).catch(function(){
-ul.textContent="";var e=hel("li","he","تعذر فتح السجل في هذا المتصفح.");ul.appendChild(e);$("hinfo").textContent="";$("hclear").hidden=true})}
+ul.textContent="";var e=hel("li","he","Couldn't open history in this browser.");ul.appendChild(e);$("hinfo").textContent="";$("hclear").hidden=true})}
 function hshow(){if(!$("hist").hidden)return;hprev=document.activeElement;$("hist").hidden=false;document.documentElement.style.overflow="hidden";$("hbtn").setAttribute("aria-expanded","true");hrender();if(typeof syncNow=="function")syncNow();$("hclose").focus()}
-function hhide(skip){if($("hist").hidden)return;pvclose();hfd="";$("hist").hidden=true;document.documentElement.style.overflow="";$("hbtn").setAttribute("aria-expanded","false");hc=null;if(!skip){try{(hprev&&hprev.focus?hprev:$("hbtn")).focus()}catch(x){}}}
+function hhide(skip){if($("hist").hidden)return;pvclose();hfd="";hcalOpen(false);$("hist").hidden=true;document.documentElement.style.overflow="";$("hbtn").setAttribute("aria-expanded","false");hc=null;if(!skip){try{(hprev&&hprev.focus?hprev:$("hbtn")).focus()}catch(x){}}}
 $("hpi").innerHTML=ICO.hist;$("hclose").innerHTML=ICO.x;
 $("hbtn").onclick=hshow;$("hclose").onclick=function(){hhide()};
 $("hist").addEventListener("click",function(e){if(e.target===this)hhide()});
-document.addEventListener("keydown",function(e){if($("hist").hidden||!$("pv").hidden||!$("sy").hidden)return;
-if(e.key=="Escape"){e.preventDefault();hhide();return}
+document.addEventListener("keydown",function(e){if($("hist").hidden||!$("pv").hidden||!$("sy").hidden||!$("dc").hidden)return;
+if(e.key=="Escape"){e.preventDefault();if(!$("cal").hidden){hcalOpen(false);try{$("hfd").focus()}catch(x){}return}hhide();return}
 if(e.key=="Tab"){var f=[].filter.call($("hist").querySelectorAll("button,input"),function(b){return !b.disabled&&!b.hidden&&b.offsetParent!==null});if(!f.length)return;var a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}});
 $("hlist").addEventListener("pointerdown",function(e){var b=e.target.closest&&e.target.closest("button[data-a=out]");if(b){var li=b.closest("li");if(li)hget(+li.dataset.id).catch(function(){})}});
 $("hlist").addEventListener("click",function(e){
 var b=e.target.closest&&e.target.closest("button[data-a]");if(!b||b.disabled)return;
 var li=b.closest("li"),id=+li.dataset.id,a=b.dataset.a;
 var r=hrows.filter(function(x){return x.id==id})[0];if(!r)return;
-if(a=="view"){var tv=b.textContent;b.disabled=true;b.textContent="…";hview(r,b).catch(function(x){toast(x&&x.msg||"تعذر عرض الملف. حاول مرة أخرى.",3200)}).then(function(){b.disabled=false;b.textContent=tv})}
+if(a=="view"){var tv=b.textContent;b.disabled=true;b.textContent="…";hview(r,b).catch(function(x){toast(x&&x.msg||"Couldn't show the file. Try again.",3200)}).then(function(){b.disabled=false;b.textContent=tv})}
 else if(a=="out")hout(b,r);
-else if(a=="res")hconf(b,"استرجاع",function(){hrestore(r)});
-else if(a=="del")hconf(b,"حذف",function(){hdel1(r)})});
-function hfset(){var v=$("hfd").value||"";if(v==hfd)return;hfd=v;hrender();try{$("hlist").scrollTop=0}catch(x){}}
-$("hfd").addEventListener("input",hfset);$("hfd").addEventListener("change",hfset);
-$("hfd").addEventListener("click",function(){try{this.showPicker()}catch(x){}});
-$("hfx").onclick=function(){$("hfd").value="";hfset();try{$("hfd").focus()}catch(x){}};
-$("hclear").onclick=function(){var b=this;hconf(b,"مسح الكل",hclearAll)};
+else if(a=="res")hconf(b,"Restore",function(){hrestore(r)});
+else if(a=="del"){if(hsyncOn())dcAsk(r);else hconf(b,"Delete",function(){hdel1(r)})}});
+var hMON=["January","February","March","April","May","June","July","August","September","October","November","December"],hcy=0,hcm=0;
+function hfLabel(){$("hft").textContent=hfd?hdl(hfd):"Select a day";$("hfd").classList.toggle("e",!hfd)}
+function hcalOpen(o){if(!o&&$("cal").hidden){$("hlist").hidden=false;return}$("cal").hidden=!o;$("hlist").hidden=!!o;$("hfd").setAttribute("aria-expanded",o?"true":"false");
+if(o){var b=hfd?hfd.split("-"):null,d=new Date();hcy=b?+b[0]:d.getFullYear();hcm=b?+b[1]-1:d.getMonth();hcalDraw()}}
+function hcalDraw(){var g=$("calg"),has={},td=new Date(),tk=td.getFullYear()+"-"+p2(td.getMonth()+1)+"-"+p2(td.getDate());
+g.textContent="";$("calt").textContent=hMON[hcm]+" "+hcy;
+hrows.forEach(function(r){var k=hday(r);has[k]=(has[k]||0)+1});
+"SMTWTFS".split("").forEach(function(c){var w=hel("div","cw",c);w.setAttribute("aria-hidden","true");g.appendChild(w)});
+var first=new Date(hcy,hcm,1).getDay(),n=new Date(hcy,hcm+1,0).getDate();
+for(var i=0;i<first;i++)g.appendChild(hel("div","cx"));
+for(var d=1;d<=n;d++){var k=hcy+"-"+p2(hcm+1)+"-"+p2(d),b=hel("button","cd"+(has[k]?" has":"")+(k==hfd?" sel":"")+(k==tk?" td":""),String(d));b.type="button";b.dataset.d=k;
+b.setAttribute("aria-label",hMON[hcm]+" "+d+", "+hcy+(has[k]?", "+hnum(has[k]):""));b.setAttribute("aria-pressed",k==hfd?"true":"false");g.appendChild(b)}}
+function hpick(k){hfd=k;hcalOpen(false);hrender();try{$("hlist").scrollTop=0}catch(x){}}
+$("hfd").onclick=function(){hcalOpen($("cal").hidden)};
+$("calp").innerHTML=ICO.prev;$("caln").innerHTML=ICO.next;
+$("calp").onclick=function(){hcm--;if(hcm<0){hcm=11;hcy--}hcalDraw()};
+$("caln").onclick=function(){hcm++;if(hcm>11){hcm=0;hcy++}hcalDraw()};
+$("calg").addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-d]");if(b)hpick(b.dataset.d)});
+$("calto").onclick=function(){var d=new Date();hpick(d.getFullYear()+"-"+p2(d.getMonth()+1)+"-"+p2(d.getDate()))};
+$("calcl").onclick=function(){hcalOpen(false);try{$("hfd").focus()}catch(x){}};
+$("hfx").onclick=function(){hfd="";hcalOpen(false);hrender();try{$("hfd").focus()}catch(x){}};
+$("hclear").onclick=function(){var b=this;if(hsyncOn())dcAsk(null);else hconf(b,"Clear all",hclearAll)};
 $("pvx").innerHTML=ICO.x;$("pvm").innerHTML=ICO.minus;$("pvl").innerHTML=ICO.plus;
 $("pvx").onclick=pvclose;$("pvm").onclick=function(){pvz(pvZ/1.35)};$("pvl").onclick=function(){pvz(pvZ*1.35)};$("pvp").onclick=function(){pvz(1)};
 $("pvo").onclick=function(){if(pvR)hout(this,pvR)};
@@ -616,53 +651,54 @@ hcount();
 /* Shared history across devices (Supabase). Optional: needs the setup.sql script. Off in the claude.ai preview. */
 var NDGS_DEFAULT={"url": "https://njsupwjfeoymgemibuch.supabase.co", "key": "sb_publishable_Sygk0qfEUwyLm4SaiPQ8VQ_m7oY062l"};
 var OPEN_CODE="ndgs-open-access";
-var SYN_OK=!window.claude,SYK="ndgs-sync-v1",SYS="ndgs-sync-seq",SY={url:"",key:"",code:OPEN_CODE,admin:"",off:false,seq:0},syBusy=false,syAgain=false,syT=0,syWarned=false,syLast={c:"",t:""};
+var SYN_OK=!window.claude,SYK="ndgs-sync-v1",SYS="ndgs-sync-seq",SY={url:"",key:"",code:OPEN_CODE,off:false,seq:0},syBusy=false,syAgain=false,syT=0,syGen=0,syWarned=false,syLast={c:"",t:""};
 try{var s0=JSON.parse(localStorage.getItem(SYK)||"null");if(s0)SY=Object.assign(SY,s0);SY.seq=+localStorage.getItem(SYS)||0}catch(x){}
 SY.code=OPEN_CODE;
 if(!SY.url&&NDGS_DEFAULT.url)SY.url=NDGS_DEFAULT.url;
 if(!SY.key&&NDGS_DEFAULT.key)SY.key=NDGS_DEFAULT.key;
-var SYE={auth:"الخادم لا يقبل التطبيق. شغّل setup.sql كما هو دون تغيير الرمز الداخلي في آخره.",locked:"محاولات خاطئة كثيرة. انتظر دقيقة ثم أعد المحاولة.",admin:"هذه العملية تحتاج رمز المدير.",none:"الملف غير موجود في السجل المشترك.",bad:"رفض الخادم الملف."};
-function sySave(){try{localStorage.setItem(SYK,JSON.stringify({url:SY.url,key:SY.key,admin:SY.admin,off:!!SY.off}));localStorage.setItem(SYS,String(SY.seq||0))}catch(x){}}
+var SYE={auth:"The server doesn't accept this app. Run setup.sql exactly as provided, without changing its internal code.",locked:"Too many wrong attempts. Wait a minute and try again.",admin:"This action needs the delete code.",del:"Wrong delete code, or no delete code has been set in Supabase.",none:"File not found in shared history.",bad:"The server rejected the file."};
+function sySave(){try{localStorage.setItem(SYK,JSON.stringify({url:SY.url,key:SY.key,off:!!SY.off}));localStorage.setItem(SYS,String(SY.seq||0))}catch(x){}}
 function syncOn(){return SYN_OK&&!!(SY.url&&SY.key&&!SY.off)}
-function SYadmin(){return !!SY.admin}
-function syUI(s){var b=$("hsy"),k=syncOn()?s:"off";b.dataset.s=k;b.setAttribute("aria-label","ربط السجل المشترك: "+({off:"غير مفعّل",ok:"متصل",sync:"جارٍ المزامنة",err:"تعذرت المزامنة"}[k]))}
+function syUI(s){var b=$("hsy"),k=syncOn()?s:"off";b.dataset.s=k;b.setAttribute("aria-label","Shared history: "+({off:"off",ok:"connected",sync:"syncing",err:"sync failed"}[k]))}
 function rh(){var h={"Content-Type":"application/json",apikey:SY.key};if(/^eyJ/.test(SY.key))h.Authorization="Bearer "+SY.key;return h}
 async function rpc(fn,args,ms){
 var c=new AbortController(),tm=setTimeout(function(){c.abort()},ms||25000),r,j=null;
 try{r=await fetch(String(SY.url).replace(/\/+$/,"")+"/rest/v1/rpc/"+fn,{method:"POST",headers:rh(),body:JSON.stringify(args||{}),signal:c.signal});try{j=await r.json()}catch(x){}}
-catch(x){clearTimeout(tm);throw{net:1,msg:"تعذر الاتصال. تحقق من الإنترنت ومن رابط المشروع."}}
+catch(x){clearTimeout(tm);throw{net:1,msg:"Can't reach the server. Check the internet connection and the project URL."}}
 clearTimeout(tm);
-if(!r.ok)throw{status:r.status,msg:r.status==401||r.status==403?"المفتاح العام غير صحيح.":r.status==404?"لم يُنفَّذ سكربت SQL بعد في Supabase.":"رفض الخادم الطلب ("+r.status+")."};
+if(!r.ok)throw{status:r.status,msg:r.status==401||r.status==403?"Wrong publishable key.":r.status==404?"The SQL script hasn't been run in Supabase yet.":"The server rejected the request ("+r.status+")."};
 if(!j||j.ok!==true){var e=j&&j.err||"bad";throw{err:e,msg:SYE[e]||SYE.bad}}
 return j}
 function b64e(u8){return new Promise(function(ok,no){var fr=new FileReader();fr.onload=function(){ok(String(fr.result).split(",")[1]||"")};fr.onerror=function(){no(fr.error)};fr.readAsDataURL(new Blob([u8]))})}
 function b64d(s){var bin=atob(s),n=bin.length,u=new Uint8Array(n);for(var i=0;i<n;i++)u[i]=bin.charCodeAt(i);return u}
 function hfile(id){return hrun(["files"],"readonly",function(t){return t.objectStore("files").get(id)})}
 function cloudFetch(id){return rpc("ndgs_get",{code:SY.code,rid:id},90000).then(function(j){var u=b64d(j.pdf);return hrun(["files"],"readwrite",function(t){return t.objectStore("files").put(u,id)}).then(function(){return u})})}
-function cloudDel(id){return rpc("ndgs_del",{code:SY.admin,rid:id==null?null:id},30000).catch(function(e){if(e&&(e.err=="auth"||e.err=="admin"))e.msg="رمز المدير غير صحيح أو غير مضاف في إعدادات الربط.";throw e})}
-async function pushPending(){
-var rows=(await hlist()).slice().reverse();
+function cloudDel(id,code){return rpc("ndgs_del",{code:code,rid:id==null?null:id},30000).catch(function(e){if(e&&(e.err=="auth"||e.err=="admin"))e.msg=SYE.del;throw e})}
+function cloudAuth(code){return rpc("ndgs_stats",{code:code}).then(function(j){if(j.role!="admin")throw{err:"admin",msg:SYE.del};return j},function(e){if(e&&e.err=="auth")e.msg=SYE.del;throw e})}
+function syStale(g){if(g!==syGen)throw{stale:1}}
+async function pushPending(g){
+var rows=(await hlist()).slice().reverse();syStale(g);
 for(var i=0;i<rows.length;i++){var r=rows[i];if(r.sy)continue;
 var f=await hfile(r.id);if(!f)continue;
 if(f instanceof ArrayBuffer)f=new Uint8Array(f);
-var pdf=await b64e(f);
-await rpc("ndgs_put",{code:SY.code,rid:r.id,meta:{name:r.name,ts:r.ts,size:r.size,date:r.date,shift:r.shift,thumb:r.thumb,st:r.st},pdf:pdf},90000);
+var pdf=await b64e(f);syStale(g);
+await rpc("ndgs_put",{code:SY.code,rid:r.id,meta:{name:r.name,ts:r.ts,size:r.size,date:r.date,shift:r.shift,thumb:r.thumb,st:r.st},pdf:pdf},90000);syStale(g);
 await hrun(["meta"],"readwrite",function(t){var s=t.objectStore("meta"),g=s.get(r.id);g.onsuccess=function(){if(g.result){g.result.sy=1;s.put(g.result)}};return null})}}
-async function pullAll(){
+async function pullAll(g){
 var j,guard=0;
-do{j=await rpc("ndgs_list",{code:SY.code,since:SY.seq||0},40000);
+do{j=await rpc("ndgs_list",{code:SY.code,since:SY.seq||0},40000);syStale(g);
 if(j.items&&j.items.length)await hrun(["meta"],"readwrite",function(t){var s=t.objectStore("meta");j.items.forEach(function(it){var g=s.get(it.id);g.onsuccess=function(){s.put(Object.assign({},g.result||{},it,{sy:1}))}});return null});
 SY.seq=Math.max(SY.seq||0,+j.max||0);sySave()}while(j.more&&++guard<200);
 var have={};(j.ids||[]).forEach(function(i){have[i]=1});
-var rows=await hlist(),gone=rows.filter(function(r){return r.sy&&!have[r.id]});
+var rows=await hlist();syStale(g);var gone=rows.filter(function(r){return r.sy&&!have[r.id]});
 if(gone.length)await hrun(["meta","files"],"readwrite",function(t){gone.forEach(function(r){t.objectStore("meta").delete(r.id);t.objectStore("files").delete(r.id)});return null})}
 async function syncNow(manual){
 if(!syncOn())return;
 if(syBusy){syAgain=true;return}
 if(!manual&&navigator.onLine===false){syUI("err");return}
-syBusy=true;syUI("sync");var okk=false;
-try{await pushPending();await pullAll();okk=true;syLast={c:"ok",t:"آخر مزامنة ناجحة: "+hdt(Date.now()).replace(" · "," ")}}
-catch(e){syLast={c:"er",t:(e&&e.msg)||"تعذرت المزامنة."};if(e&&(e.err=="auth"||e.err=="locked")&&!syWarned){syWarned=true;toast(syLast.t+" افتح إعدادات الربط من السجل.",4200)}}
+syBusy=true;syUI("sync");var okk=false,g=syGen;
+try{await pushPending(g);await pullAll(g);okk=true;syLast={c:"ok",t:"Last successful sync: "+hdt(Date.now()).replace(" · "," ")}}
+catch(e){if(e&&e.stale){}else{syLast={c:"er",t:(e&&e.msg)||"Sync failed."};if(e&&(e.err=="auth"||e.err=="locked")&&!syWarned){syWarned=true;toast(syLast.t+" Open the cloud settings in History.",4200)}}}
 finally{syBusy=false;syUI(okk?"ok":"err");hc=null;hcount();if(!$("hist").hidden)hrender();if(!$("sy").hidden)syShowStatus();if(syAgain){syAgain=false;setTimeout(syncNow,300)}}}
 function syncSoon(){if(!syncOn())return;clearTimeout(syT);syT=setTimeout(syncNow,600)}
 async function resetLinks(){
@@ -670,44 +706,64 @@ var rows=await hlist(),keys=await hrun(["files"],"readonly",function(t){return t
 (keys||[]).forEach(function(k){have[k]=1});
 await hrun(["meta","files"],"readwrite",function(t){var m=t.objectStore("meta");rows.forEach(function(r){if(!r.sy)return;if(have[r.id]){r.sy=0;delete r.seq;m.put(r)}else m.delete(r.id)});return null});
 SY.seq=0;sySave();hc=null;hcount()}
+/* delete-code dialog: every delete of a report asks for the code, checked on the server */
+var dcR=null,dcBusy=false,dcPrev=null;
+function dcMsg(c,t){var e=$("dcm");e.className="syst "+c;e.textContent=t}
+function dcAsk(r){dcR=r||null;dcBusy=false;dcPrev=document.activeElement;
+$("dcs").textContent=r?"Enter the delete code to remove this report from all devices.":"Enter the delete code to clear every report from all devices.";
+$("dcgo").textContent=r?"Delete":"Clear all";$("dcgo").disabled=false;$("dcno").disabled=false;$("dcc").value="";dcMsg("","");$("dc").hidden=false;try{$("dcc").focus()}catch(x){}}
+function dcClose(){if($("dc").hidden||dcBusy)return;$("dc").hidden=true;$("dcc").value="";try{(dcPrev&&dcPrev.isConnected?dcPrev:$("hclose")).focus()}catch(x){}}
+async function dcRun(){
+if(dcBusy)return;var code=$("dcc").value.trim();
+if(!code){dcMsg("er","Enter the delete code.");return}
+dcBusy=true;$("dcgo").disabled=true;$("dcno").disabled=true;dcMsg("","Checking\u2026");
+var all=!dcR,r=dcR,okk=false;
+try{if(all){await cloudDel(null,code);await hclearLocal()}else{if(r.sy)await cloudDel(r.id,code);else await cloudAuth(code);await hdelLocal(r.id)}okk=true}
+catch(e){dcMsg("er",e&&e.net?"Can't reach the server. Deleting needs an internet connection.":(e&&e.msg)||"Couldn't delete. Try again.")}
+dcBusy=false;$("dcgo").disabled=false;$("dcno").disabled=false;
+if(okk){$("dc").hidden=true;$("dcc").value="";hc=null;hcount();hrender();toast(all?"All reports deleted.":"Report deleted.",2400)}}
 /* settings dialog */
 function syIsSecret(k){if(/^sb_secret_/i.test(k))return true;try{var p=JSON.parse(atob(k.split(".")[1].replace(/-/g,"+").replace(/_/g,"/")));return p.role=="service_role"}catch(x){return false}}
 function syShowStatus(){var e=$("syst");e.textContent=syLast.t||"";e.className="syst "+(syLast.c||"")}
 function syOpen(){var def=!!(NDGS_DEFAULT.url&&NDGS_DEFAULT.key);$("sfu").hidden=def;$("sfk").hidden=def;
-$("syu").value=SY.url||"";$("syk").value=SY.key||"";$("sya").value=SY.admin||"";
+$("syu").value=SY.url||"";$("syk").value=SY.key||"";
 $("sydc").hidden=!syncOn();syShowStatus();$("sy").hidden=false;$("syx").focus()}
 function syClose(){if($("sy").hidden)return;$("sy").hidden=true;try{$("hsy").focus()}catch(x){}}
 function syMsg(c,t){var e=$("syst");e.className="syst "+c;e.textContent=t}
 async function syTest(){
-var b=$("sysv"),url=$("syu").value.trim(),key=$("syk").value.trim(),code=OPEN_CODE,adm=$("sya").value.trim();
+var b=$("sysv"),url=$("syu").value.trim(),key=$("syk").value.trim(),code=OPEN_CODE;
 if($("sfu").hidden){url=NDGS_DEFAULT.url;key=NDGS_DEFAULT.key}
-try{url=new URL(/^https?:\/\//i.test(url)?url:"https://"+url).origin}catch(x){syMsg("er","رابط المشروع غير صالح.");return}
-if(!url||!key){syMsg("er","أدخل رابط المشروع والمفتاح العام.");return}
-if(/(^|\.)supabase\.com$/i.test(new URL(url).hostname)){syMsg("er","هذا رابط لوحة التحكم. انسخ Project URL من Settings ثم API، وهو ينتهي بـ supabase.co");return}
-if(syIsSecret(key)){syMsg("er","هذا مفتاح سري ولا يوضع في التطبيق. استخدم المفتاح العام Publishable key.");return}
-b.disabled=true;syMsg("","جارٍ الاختبار…");
-var old={url:SY.url,key:SY.key,admin:SY.admin,off:SY.off,on:syncOn()};
+try{url=new URL(/^https?:\/\//i.test(url)?url:"https://"+url).origin}catch(x){syMsg("er","Invalid project URL.");return}
+if(!url||!key){syMsg("er","Enter the project URL and the publishable key.");return}
+if(/(^|\.)supabase\.com$/i.test(new URL(url).hostname)){syMsg("er","That's the dashboard link. Copy the Project URL from Settings > API; it ends with supabase.co");return}
+if(syIsSecret(key)){syMsg("er","That's a secret key and must never go in the app. Use the Publishable key.");return}
+b.disabled=true;syMsg("","Testing…");
+var old={url:SY.url,key:SY.key,off:SY.off,on:syncOn()};
 try{
 SY.url=url;SY.key=key;SY.code=code;
 var st=await rpc("ndgs_stats",{code:code});
-var admOk=false;
-if(adm){try{var sa=await rpc("ndgs_stats",{code:adm});admOk=sa.role=="admin"}catch(x){admOk=false}}
-if(adm&&!admOk){SY.url=old.url;SY.key=old.key;SY.admin=old.admin;SY.off=old.off;syMsg("er","رمز المدير غير صحيح، أو لم تضفه في سكربت SQL.");return}
 var changed=old.url!==url||old.key!==key;
-if(changed&&old.on)await resetLinks();
+if(changed&&old.on){syGen++;await syIdle();await resetLinks()}
 if(changed||old.off)SY.seq=0;
-SY.admin=adm;SY.off=false;sySave();
+SY.off=false;sySave();
 var mb=function(n){return(n/1048576).toFixed(n>=10485760?0:1)};
-syLast={c:"ok",t:"تم الاتصال ✓ "+(adm?"صلاحية المدير (الحذف مفعّل) · ":"")+"الملفات المشتركة: "+st.count+" · المساحة المستخدمة: "+mb(st.db)+" MB من 500 MB"};
+syLast={c:"ok",t:"Connected \u2713 \u00b7 Shared files: "+st.count+" \u00b7 Storage used: "+mb(st.db)+" MB of 500 MB"};
 syShowStatus();$("sydc").hidden=false;syUI("ok");if(!$("hist").hidden)hrender();syncNow(true)
-}catch(e){SY.url=old.url;SY.key=old.key;SY.admin=old.admin;SY.off=old.off;syMsg("er",(e&&e.msg)||"تعذر الاختبار.")}
+}catch(e){SY.url=old.url;SY.key=old.key;SY.off=old.off;syMsg("er",(e&&e.msg)||"Test failed.")}
 finally{b.disabled=false}}
+function syIdle(){return new Promise(function(ok){var t0=Date.now();(function w(){if(!syBusy||Date.now()-t0>3000)ok();else setTimeout(w,40)})()})}
 async function syDisconnect(){
-await resetLinks();SY.off=true;SY.admin="";SY.seq=0;if(!(NDGS_DEFAULT.url&&NDGS_DEFAULT.key)){SY.url="";SY.key=""}sySave();
-syLast={c:"",t:"تم فصل الربط. بقيت الملفات المحفوظة على هذا الجهاز."};syOpen();syUI("off");if(!$("hist").hidden)hrender()}
+SY.off=true;syGen++;await syIdle();await resetLinks();SY.seq=0;if(!(NDGS_DEFAULT.url&&NDGS_DEFAULT.key)){SY.url="";SY.key=""}sySave();
+syLast={c:"",t:"Disconnected. Files saved on this device were kept."};syOpen();syUI("off");if(!$("hist").hidden)hrender()}
 if(SYN_OK){
+$("dci").innerHTML=ICO.trash;$("dcx").innerHTML=ICO.x;$("dcgo").onclick=dcRun;$("dcno").onclick=dcClose;$("dcx").onclick=dcClose;
+$("dc").addEventListener("click",function(e){if(e.target===this)dcClose()});
+$("dcc").addEventListener("keydown",function(e){if(e.key=="Enter"){e.preventDefault();dcRun()}});
+document.addEventListener("keydown",function(e){if($("dc").hidden)return;
+if(e.key=="Escape"){e.preventDefault();e.stopPropagation();dcClose();return}
+if(e.key=="Tab"){var f=[].filter.call($("dc").querySelectorAll("button,input"),function(b){return !b.disabled&&!b.hidden&&b.offsetParent!==null});if(!f.length)return;var a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}},true);
 $("hsy").hidden=false;$("hsy").innerHTML=ICO.cloud;$("syi").innerHTML=ICO.cloud;$("syx").innerHTML=ICO.x;
-$("hsy").onclick=syOpen;$("syx").onclick=syClose;$("sysv").onclick=syTest;$("sydc").onclick=function(){hconf(this,"فصل الربط",syDisconnect)};
+$("hsy").onclick=syOpen;$("syx").onclick=syClose;$("sysv").onclick=syTest;$("sydc").onclick=function(){hconf(this,"Disconnect",syDisconnect)};
 $("sy").addEventListener("click",function(e){if(e.target===this)syClose()});
 [].forEach.call($("sy").querySelectorAll("input"),function(i){i.addEventListener("keydown",function(e){if(e.key=="Enter"){e.preventDefault();syTest()}})});
 document.addEventListener("keydown",function(e){if($("sy").hidden)return;

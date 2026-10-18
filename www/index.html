@@ -284,7 +284,7 @@ body.exp *{animation:none!important;transition:none!important}
 </div>
 <div id="toast" role="status" dir="rtl"></div>
 <div id="hist" class="hs" hidden><div class="hp" role="dialog" aria-modal="true" aria-labelledby="hpt"><div class="hph"><span class="hpi" id="hpi"></span><div class="hpm"><div class="hpt" id="hpt">HISTORY</div><div class="hps">Exported files</div></div><button type="button" class="hx" id="hsy" aria-label="Shared history" hidden></button><button type="button" class="hx" id="hclose" aria-label="Close"></button></div><div class="hfb" id="hfb" hidden><div class="hfl"><span>Search by report date</span><button type="button" class="hfv e" id="hfd" aria-haspopup="dialog" aria-expanded="false" aria-label="Search by report date"><b id="hft">Select a day</b></button></div><button type="button" class="hb2" id="hfx" hidden>Show all</button></div><div class="cal" id="cal" hidden role="dialog" aria-label="Choose a date"><div class="calh"><button type="button" class="hx" id="calp" aria-label="Previous month"></button><div class="calt" id="calt" aria-live="polite"></div><button type="button" class="hx" id="caln" aria-label="Next month"></button></div><div class="calg" id="calg"></div><div class="calf"><button type="button" class="hb2" id="calto">Today</button><button type="button" class="hb2" id="calcl">Close</button></div></div><ul class="hl" id="hlist"></ul><div class="hpf"><span id="hinfo"></span><button type="button" class="hb2 d" id="hclear" hidden>Clear all</button></div></div></div>
-<div id="sy" class="hs" hidden><div class="hp sp" role="dialog" aria-modal="true" aria-labelledby="syt"><div class="hph"><span class="hpi" id="syi"></span><div class="hpm"><div class="hpt" id="syt">SHARED HISTORY</div><div class="hps">Link shared history</div></div><button type="button" class="hx" id="syx" aria-label="Close"></button></div><div class="syb"><label class="sf" id="sfu"><span>Project URL</span><input id="syu" type="url" placeholder="https://xxxx.supabase.co" autocomplete="off" autocapitalize="none" spellcheck="false"></label><label class="sf" id="sfk"><span>Publishable key</span><input id="syk" placeholder="sb_publishable_..." autocomplete="off" autocapitalize="none" spellcheck="false"></label><div class="syst" id="syst" role="status"></div><div class="sya"><button type="button" class="hb2 p" id="sysv">Save &amp; test</button><button type="button" class="hb2 d" id="sydc" hidden>Disconnect</button></div></div></div></div>
+<div id="sy" class="hs" hidden><div class="hp sp" role="dialog" aria-modal="true" aria-labelledby="syt"><div class="hph"><span class="hpi" id="syi"></span><div class="hpm"><div class="hpt" id="syt">SHARED HISTORY</div><div class="hps" id="syh">Link shared history</div></div><button type="button" class="hx" id="syx" aria-label="Close"></button></div><div class="syb"><label class="sf" id="sfu"><span>Project URL</span><input id="syu" type="url" placeholder="https://xxxx.supabase.co" autocomplete="off" autocapitalize="none" spellcheck="false"></label><label class="sf" id="sfk"><span>Publishable key</span><input id="syk" placeholder="sb_publishable_..." autocomplete="off" autocapitalize="none" spellcheck="false"></label><div class="syst" id="syst" role="status"></div><div class="sya"><button type="button" class="hb2 p" id="sysv">Save &amp; test</button></div></div></div></div>
 <div id="dc" class="hs" hidden><div class="hp sp" role="dialog" aria-modal="true" aria-labelledby="dct"><div class="hph"><span class="hpi" id="dci"></span><div class="hpm"><div class="hpt" id="dct">DELETE CODE</div><div class="hps" id="dcs"></div></div><button type="button" class="hx" id="dcx" aria-label="Close"></button></div><div class="syb"><label class="sf"><span>Delete code</span><input id="dcc" type="password" autocomplete="new-password" autocapitalize="none" spellcheck="false"></label><div class="syst" id="dcm" role="status"></div><div class="sya"><button type="button" class="hb2 d" id="dcgo">Delete</button><button type="button" class="hb2" id="dcno">Cancel</button></div></div></div></div>
 <div id="pv" class="pv" hidden role="dialog" aria-modal="true" aria-label="File viewer"><div class="pvh"><button type="button" class="hx" id="pvx" aria-label="Close"></button><div class="pvn" id="pvn"></div></div><div class="pvs" id="pvs"><img id="pvi" class="pvi" alt="Report preview" draggable="false"></div><div class="pvf"><div class="pvz"><button type="button" class="hx" id="pvm" aria-label="Zoom out"></button><button type="button" class="hx pvp" id="pvp" aria-label="Actual size">100%</button><button type="button" class="hx" id="pvl" aria-label="Zoom in"></button></div><button type="button" class="hb2 p" id="pvo"></button></div></div>
 <script>
@@ -651,14 +651,15 @@ hcount();
 /* Shared history across devices (Supabase). Optional: needs the setup.sql script. Off in the claude.ai preview. */
 var NDGS_DEFAULT={"url": "https://njsupwjfeoymgemibuch.supabase.co", "key": "sb_publishable_Sygk0qfEUwyLm4SaiPQ8VQ_m7oY062l"};
 var OPEN_CODE="ndgs-open-access";
-var SYN_OK=!window.claude,SYK="ndgs-sync-v1",SYS="ndgs-sync-seq",SY={url:"",key:"",code:OPEN_CODE,off:false,seq:0},syBusy=false,syAgain=false,syT=0,syGen=0,syWarned=false,syLast={c:"",t:""};
+var SYN_OK=!window.claude,SYK="ndgs-sync-v1",SYS="ndgs-sync-seq",SY={url:"",key:"",code:OPEN_CODE,seq:0},syBusy=false,syAgain=false,syT=0,syGen=0,syWarned=false,syLast={c:"",t:""};
 try{var s0=JSON.parse(localStorage.getItem(SYK)||"null");if(s0)SY=Object.assign(SY,s0);SY.seq=+localStorage.getItem(SYS)||0}catch(x){}
-SY.code=OPEN_CODE;
-if(!SY.url&&NDGS_DEFAULT.url)SY.url=NDGS_DEFAULT.url;
-if(!SY.key&&NDGS_DEFAULT.key)SY.key=NDGS_DEFAULT.key;
+SY.code=OPEN_CODE;delete SY.off;
+/* Shared history is mandatory when the project is baked into the build: always use the baked project, and ignore any old "off" flag. */
+var SY_FIX=!!(NDGS_DEFAULT.url&&NDGS_DEFAULT.key);
+if(SY_FIX){if(SY.url!==NDGS_DEFAULT.url||SY.key!==NDGS_DEFAULT.key)SY.seq=0;SY.url=NDGS_DEFAULT.url;SY.key=NDGS_DEFAULT.key}
 var SYE={auth:"The server doesn't accept this app. Run setup.sql exactly as provided, without changing its internal code.",locked:"Too many wrong attempts. Wait a minute and try again.",admin:"This action needs the delete code.",del:"Wrong delete code, or no delete code has been set in Supabase.",none:"File not found in shared history.",bad:"The server rejected the file."};
-function sySave(){try{localStorage.setItem(SYK,JSON.stringify({url:SY.url,key:SY.key,off:!!SY.off}));localStorage.setItem(SYS,String(SY.seq||0))}catch(x){}}
-function syncOn(){return SYN_OK&&!!(SY.url&&SY.key&&!SY.off)}
+function sySave(){try{localStorage.setItem(SYK,JSON.stringify({url:SY.url,key:SY.key}));localStorage.setItem(SYS,String(SY.seq||0))}catch(x){}}
+function syncOn(){return SYN_OK&&!!(SY.url&&SY.key)}
 function syUI(s){var b=$("hsy"),k=syncOn()?s:"off";b.dataset.s=k;b.setAttribute("aria-label","Shared history: "+({off:"off",ok:"connected",sync:"syncing",err:"sync failed"}[k]))}
 function rh(){var h={"Content-Type":"application/json",apikey:SY.key};if(/^eyJ/.test(SY.key))h.Authorization="Bearer "+SY.key;return h}
 async function rpc(fn,args,ms){
@@ -727,7 +728,7 @@ function syIsSecret(k){if(/^sb_secret_/i.test(k))return true;try{var p=JSON.pars
 function syShowStatus(){var e=$("syst");e.textContent=syLast.t||"";e.className="syst "+(syLast.c||"")}
 function syOpen(){var def=!!(NDGS_DEFAULT.url&&NDGS_DEFAULT.key);$("sfu").hidden=def;$("sfk").hidden=def;
 $("syu").value=SY.url||"";$("syk").value=SY.key||"";
-$("sydc").hidden=!syncOn();syShowStatus();$("sy").hidden=false;$("syx").focus()}
+$("sysv").textContent=def?"Check connection":"Save & test";$("syh").textContent=def?"Always on for all devices":"Link shared history";syShowStatus();$("sy").hidden=false;$("syx").focus()}
 function syClose(){if($("sy").hidden)return;$("sy").hidden=true;try{$("hsy").focus()}catch(x){}}
 function syMsg(c,t){var e=$("syst");e.className="syst "+c;e.textContent=t}
 async function syTest(){
@@ -738,23 +739,20 @@ if(!url||!key){syMsg("er","Enter the project URL and the publishable key.");retu
 if(/(^|\.)supabase\.com$/i.test(new URL(url).hostname)){syMsg("er","That's the dashboard link. Copy the Project URL from Settings > API; it ends with supabase.co");return}
 if(syIsSecret(key)){syMsg("er","That's a secret key and must never go in the app. Use the Publishable key.");return}
 b.disabled=true;syMsg("","Testing…");
-var old={url:SY.url,key:SY.key,off:SY.off,on:syncOn()};
+var old={url:SY.url,key:SY.key,on:syncOn()};
 try{
 SY.url=url;SY.key=key;SY.code=code;
 var st=await rpc("ndgs_stats",{code:code});
 var changed=old.url!==url||old.key!==key;
 if(changed&&old.on){syGen++;await syIdle();await resetLinks()}
-if(changed||old.off)SY.seq=0;
-SY.off=false;sySave();
+if(changed)SY.seq=0;
+sySave();
 var mb=function(n){return(n/1048576).toFixed(n>=10485760?0:1)};
 syLast={c:"ok",t:"Connected \u2713 \u00b7 Shared files: "+st.count+" \u00b7 Storage used: "+mb(st.db)+" MB of 500 MB"};
-syShowStatus();$("sydc").hidden=false;syUI("ok");if(!$("hist").hidden)hrender();syncNow(true)
-}catch(e){SY.url=old.url;SY.key=old.key;SY.off=old.off;syMsg("er",(e&&e.msg)||"Test failed.")}
+syShowStatus();syUI("ok");if(!$("hist").hidden)hrender();syncNow(true)
+}catch(e){SY.url=old.url;SY.key=old.key;syMsg("er",(e&&e.msg)||"Test failed.")}
 finally{b.disabled=false}}
 function syIdle(){return new Promise(function(ok){var t0=Date.now();(function w(){if(!syBusy||Date.now()-t0>3000)ok();else setTimeout(w,40)})()})}
-async function syDisconnect(){
-SY.off=true;syGen++;await syIdle();await resetLinks();SY.seq=0;if(!(NDGS_DEFAULT.url&&NDGS_DEFAULT.key)){SY.url="";SY.key=""}sySave();
-syLast={c:"",t:"Disconnected. Files saved on this device were kept."};syOpen();syUI("off");if(!$("hist").hidden)hrender()}
 if(SYN_OK){
 $("dci").innerHTML=ICO.trash;$("dcx").innerHTML=ICO.x;$("dcgo").onclick=dcRun;$("dcno").onclick=dcClose;$("dcx").onclick=dcClose;
 $("dc").addEventListener("click",function(e){if(e.target===this)dcClose()});
@@ -763,7 +761,7 @@ document.addEventListener("keydown",function(e){if($("dc").hidden)return;
 if(e.key=="Escape"){e.preventDefault();e.stopPropagation();dcClose();return}
 if(e.key=="Tab"){var f=[].filter.call($("dc").querySelectorAll("button,input"),function(b){return !b.disabled&&!b.hidden&&b.offsetParent!==null});if(!f.length)return;var a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}},true);
 $("hsy").hidden=false;$("hsy").innerHTML=ICO.cloud;$("syi").innerHTML=ICO.cloud;$("syx").innerHTML=ICO.x;
-$("hsy").onclick=syOpen;$("syx").onclick=syClose;$("sysv").onclick=syTest;$("sydc").onclick=function(){hconf(this,"Disconnect",syDisconnect)};
+$("hsy").onclick=syOpen;$("syx").onclick=syClose;$("sysv").onclick=syTest;
 $("sy").addEventListener("click",function(e){if(e.target===this)syClose()});
 [].forEach.call($("sy").querySelectorAll("input"),function(i){i.addEventListener("keydown",function(e){if(e.key=="Enter"){e.preventDefault();syTest()}})});
 document.addEventListener("keydown",function(e){if($("sy").hidden)return;

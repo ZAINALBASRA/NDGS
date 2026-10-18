@@ -749,24 +749,10 @@ if(changed)SY.seq=0;
 sySave();
 var mb=function(n){return(n/1048576).toFixed(n>=10485760?0:1)};
 syLast={c:"ok",t:"Connected \u2713 \u00b7 Shared files: "+st.count+" \u00b7 Storage used: "+mb(st.db)+" MB of 500 MB"};
-syShowStatus();syUI("ok");if(!$("hist").hidden)hrender();syncNow(true);devHello()
+syShowStatus();syUI("ok");if(!$("hist").hidden)hrender();syncNow(true)
 }catch(e){SY.url=old.url;SY.key=old.key;syMsg("er",(e&&e.msg)||"Test failed.")}
 finally{b.disabled=false}}
 function syIdle(){return new Promise(function(ok){var t0=Date.now();(function w(){if(!syBusy||Date.now()-t0>3000)ok();else setTimeout(w,40)})()})}
-/* device registry: one anonymous row per install (random id, device type, app version). Read only from the Supabase dashboard. */
-var NDGS_VER="2026-10-18",DVK="ndgs-dev-v1";
-function devOS(){var u=navigator.userAgent||"",t=navigator.maxTouchPoints||0;
-if(/Android/i.test(u))return"Android";if(/iPhone|iPod/i.test(u))return"iPhone";if(/iPad/i.test(u)||(/Macintosh/i.test(u)&&t>1))return"iPad";
-if(/Windows/i.test(u))return"Windows";if(/Macintosh|Mac OS X/i.test(u))return"Mac";if(/CrOS/i.test(u))return"ChromeOS";if(/Linux/i.test(u))return"Linux";return"Other"}
-function devKind(){try{if(typeof isNative=="function"&&isNative())return"apk";if((window.matchMedia&&matchMedia("(display-mode: standalone)").matches)||navigator.standalone)return"pwa"}catch(x){}return"web"}
-function devNew(){try{if(crypto.randomUUID)return crypto.randomUUID()}catch(x){}var a="";try{var u=new Uint8Array(16);crypto.getRandomValues(u);for(var i=0;i<16;i++)a+=("0"+u[i].toString(16)).slice(-2)}catch(x){for(var j=0;j<32;j++)a+=Math.floor(Math.random()*16).toString(16)}return a}
-function devState(){var s={};try{s=JSON.parse(localStorage.getItem(DVK)||"{}")||{}}catch(x){}
-if(!/^[A-Za-z0-9-]{8,40}$/.test(s.id||"")){s={id:devNew(),t:0,v:""};try{localStorage.setItem(DVK,JSON.stringify(s))}catch(x){}}return s}
-async function devHello(force){
-if(!syncOn())return;var s=devState();
-if(!force&&s.t&&s.v===NDGS_VER&&Date.now()-s.t<6*3600*1000)return;
-try{await rpc("ndgs_hello",{code:SY.code,p_dev:s.id,p_kind:devKind(),p_os:devOS(),p_ver:NDGS_VER,p_ua:(navigator.userAgent||"").slice(0,160)},15000);
-s.t=Date.now();s.v=NDGS_VER;localStorage.setItem(DVK,JSON.stringify(s))}catch(x){}}
 if(SYN_OK){
 $("dci").innerHTML=ICO.trash;$("dcx").innerHTML=ICO.x;$("dcgo").onclick=dcRun;$("dcno").onclick=dcClose;$("dcx").onclick=dcClose;
 $("dc").addEventListener("click",function(e){if(e.target===this)dcClose()});
@@ -783,7 +769,7 @@ if(e.key=="Escape"){e.preventDefault();e.stopPropagation();syClose();return}
 if(e.key=="Tab"){var f=[].filter.call($("sy").querySelectorAll("button,input"),function(b){return !b.disabled&&!b.hidden&&b.offsetParent!==null});if(!f.length)return;var a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}},true);
 window.addEventListener("online",function(){syncSoon()});
 setInterval(function(){if(!$("hist").hidden)syncNow()},45000);
-syUI("off");if(syncOn()){syUI("sync");setTimeout(syncNow,1200);setTimeout(devHello,3500)}}
+syUI("off");if(syncOn()){syUI("sync");setTimeout(syncNow,1200)}}
 </script>
 </body>
 </html>
